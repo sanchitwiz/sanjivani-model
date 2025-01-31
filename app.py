@@ -114,11 +114,15 @@ def test_image(image_path):
         print(f"\nError processing image: {str(e)}\n")
 
 # Modified main block
+# if __name__ == '__main__':
+#     # Use waitress server for production
+#     from waitress import serve
+#     print("Server Running on http://localhost:5100")
+#     serve(app, host="0.0.0.0", port=5100)
+
 if __name__ == '__main__':
-    # Use waitress server for production
-    from waitress import serve
-    print("Server Running on http://localhost:5100")
-    serve(app, host="0.0.0.0", port=5100)
+    app.run(host="0.0.0.0", port=10000, debug=False)
+
 
 
 # if __name__ == '__main__':
